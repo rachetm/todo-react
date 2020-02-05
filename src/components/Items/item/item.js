@@ -8,11 +8,10 @@ class Item extends React.Component {
     return (
       <div className="item-container">
         <Checkbox
-          value={this.props.id}
           color="primary"
           inputProps={{ "aria-label": "secondary checkbox" }}
           checked={this.props.checked}
-          onClick={(e) => this.props.check(e.target.value)}
+          onClick={(e) => this.props.check(this.props.id)}
         />
         <p className={this.props.checked? "checked" : ""}>{this.props.content}</p>
         <Button
