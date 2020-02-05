@@ -1,2 +1,2 @@
 # todo-react
-A simple todo app written in React
+A simple todo app written in React with Redux
