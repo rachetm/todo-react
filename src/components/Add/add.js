@@ -10,13 +10,20 @@ class Add extends React.Component {
       value: ""
     };
     this.onKeyUp = this.onKeyUp.bind(this);
+    this.onChange = this.onChange.bind(this);
   }
 
   onKeyUp(e) {
     if (e.keyCode === 13 && !/^\s*$/.test(e.target.value)) {
+      e.preventDefault();
       this.props.onAdd(e.target.value);
-      e.target.value = null;
+      this.setState({
+        value: ""
+      });
     }
+  }
+
+  onChange(e){
     this.setState({
       value: e.target.value
     });
@@ -29,8 +36,10 @@ class Add extends React.Component {
           id="add-todo-field"
           label="Add an item"
           className="add-todo"
-          onKeyUp={this.onKeyUp}
+          onChange={this.onChange}
+          onKeyDown={this.onKeyUp}
           autoFocus={true}
+          value={this.state.value}
         />
         <Button
           variant="contained"
@@ -38,6 +47,9 @@ class Add extends React.Component {
           onClick={() => {
             if (!/^\s*$/.test(this.state.value)) {
               this.props.onAdd(this.state.value);
+              this.setState({
+                value: ""
+              })
             }
           }}
         >
