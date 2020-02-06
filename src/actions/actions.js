@@ -19,4 +19,11 @@ const mark_checked = id => {
     }
 }
 
-export {addTodo, mark_checked, removeTodo}
+const searchTodo = keyword => {
+    return {
+        type: "SEARCH",
+        keyword
+    }
+}
+
+export {addTodo, mark_checked, removeTodo, searchTodo}

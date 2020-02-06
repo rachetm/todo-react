@@ -11,7 +11,7 @@ class Item extends React.Component {
           color="primary"
           inputProps={{ "aria-label": "secondary checkbox" }}
           checked={this.props.checked}
-          onClick={(e) => this.props.check(this.props.id)}
+          onClick={() => this.props.check(this.props.id)}
         />
         <p className={this.props.checked? "checked" : ""}>{this.props.content}</p>
         <Button

@@ -17,13 +17,13 @@ class Add extends React.Component {
   onKeyDown(e) {
     if (e.keyCode === 13 && !/^\s*$/.test(e.target.value)) {
       this.props.addTodo(this.value);
+      // this.value = "";
     }
   }
   
   onClick() {
     if (!/^\s*$/.test(this.value)) {
       this.props.addTodo(this.value);
-      this.value = "";
     }
   }
 

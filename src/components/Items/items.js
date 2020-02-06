@@ -6,8 +6,10 @@ import { mark_checked, removeTodo} from "../../actions/actions";
 function Items(props){
     let unchecked_items = [];
     let checked_items = [];
-
-    props.items.forEach(item => {
+    const {items=[], filtered_items = []} = props;
+    const itemsToRender = filtered_items.length ? filtered_items : items;
+    
+    itemsToRender.forEach(item => {
         if (item.checked === true)
             checked_items.push(
                 <Item key={item.id} {...item} onDel={props.onDel} check={props.check}/>
@@ -22,7 +24,7 @@ function Items(props){
 
 const mapStateToProps = state => {
   return {
-    items: state
+    ...state
   };
 };
 
