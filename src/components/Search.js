@@ -7,12 +7,13 @@ import {searchTodo} from '../actions/actions' ;
 function Search(props){
     return (
       <div id="searchField">
+        <i className="fas fa-search"></i>
         <TextField
           id="search-todo-field"
           label="Search"
           className="search-todo"
           onChange={e => {
-              props.searchTodo(e.target.value);
+            props.searchTodo(e.target.value);
           }}
         />
       </div>

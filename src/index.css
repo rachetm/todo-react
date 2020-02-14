@@ -28,6 +28,13 @@ hr {
   margin: 5% 25%;
 }
 
+.fa-search{
+  font-size: 22px;
+  color: rgba(0, 0, 0, 0.555);
+  margin-top: auto;
+  text-align: center;
+}
+
 .fa-plus {
   margin-right: 15%;
 }
@@ -38,7 +45,7 @@ hr {
   margin: auto 0 auto 2%;
 }
 
-.add-todo, .search-todo {
+.add-todo, .search-todo, .fa-search{
   flex: auto;
 }
 
