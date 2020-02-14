@@ -1,4 +1,3 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import ReactDOM from "react-dom";
 import { createStore } from 'redux';
@@ -11,6 +10,6 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-    <App title="Todo" />
+    <App title="Todo App" />
   </Provider>
   , document.getElementById("root"));

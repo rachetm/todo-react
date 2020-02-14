@@ -1,7 +1,7 @@
-/* eslint-disable react/prop-types */
 import React from "react";
 import Button from "@material-ui/core/Button";
 import Checkbox from "@material-ui/core/Checkbox";
+import PropTypes from "prop-types";
 
 class Item extends React.Component {
   render() {
@@ -25,6 +25,14 @@ class Item extends React.Component {
       </div>
     );
   }
+}
+
+Item.propTypes = {
+  checked: PropTypes.bool,
+  id: PropTypes.string,
+  content: PropTypes.string,
+  check: PropTypes.func,
+  onDel: PropTypes.func
 }
 
 export default Item;
