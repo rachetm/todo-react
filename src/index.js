@@ -11,6 +11,6 @@ const store = createStore(rootReducer);
 
 ReactDOM.render(
   <Provider store={store}>
-  <App title="Todo" />
+    <App title="Todo" />
   </Provider>
   , document.getElementById("root"));

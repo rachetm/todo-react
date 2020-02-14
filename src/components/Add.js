@@ -8,7 +8,9 @@ import { addTodo } from "../actions/actions";
 class Add extends React.Component {
   constructor(props) {
     super(props);
-    this.value = "";
+    this.state = {
+      value: ""
+    }
 
     this.onKeyDown = this.onKeyDown.bind(this);
     this.onClick = this.onClick.bind(this);
@@ -16,14 +18,19 @@ class Add extends React.Component {
 
   onKeyDown(e) {
     if (e.keyCode === 13 && !/^\s*$/.test(e.target.value)) {
-      this.props.addTodo(this.value);
+      this.props.addTodo(e.target.value);
+      this.setState({
+        value: ""
+      });
     }
   }
   
   onClick() {
-    if (!/^\s*$/.test(this.value)) {
-      this.props.addTodo(this.value);
-      this.value = "";
+    if (!/^\s*$/.test(this.state.value)) {
+      this.props.addTodo(this.state.value);
+      this.setState({
+        value: ""
+      });
     }
   }
 
@@ -36,8 +43,11 @@ class Add extends React.Component {
           className="add-todo"
           onKeyDown={(e) => this.onKeyDown(e)}
           onChange={(e) => {
-            this.value = e.target.value;
+          this.setState({
+            value: e.target.value
+            })
             }}
+          value={this.state.value}
         />
         <Button variant="contained" id="addBtn" onClick={this.onClick}>
           <i className="fas fa-plus"></i>Add
@@ -47,11 +57,16 @@ class Add extends React.Component {
   }
 }
 
+const mapStateToProps = state => {
+  return {
+    ...state
+  }
+}
+
 const mapDispatchToProps = dispatch => {
   return {
     addTodo: id => dispatch(addTodo(id))
   };
 };
 
-
-export default connect(null, mapDispatchToProps)(Add);
+export default connect(mapStateToProps, mapDispatchToProps)(Add);
