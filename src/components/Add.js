@@ -25,7 +25,6 @@ function Add(props){
   }
 
   return (
-    <div>
       <div id="add-list">
         <TextField
           id="add-todo-field"
@@ -38,18 +37,11 @@ function Add(props){
           value={value}
           autoFocus={true}
         />
-        <Button variant="contained" id="addBtn" onClick={() => onClick()}>
+        <Button variant="contained" id="addBtn" onClick={onClick}>
           <i className="fas fa-plus"></i>Add
         </Button>
       </div>
-    </div>
   );
-}
-
-const mapStateToProps = state => {
-  return {
-    ...state
-  }
 }
 
 const mapDispatchToProps = dispatch => {
@@ -62,4 +54,4 @@ Add.propTypes = {
   addTodo: PropTypes.func
 }
 
-export default connect(mapStateToProps, mapDispatchToProps)(Add);
+export default connect(null, mapDispatchToProps)(Add);
