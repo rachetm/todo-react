@@ -32,7 +32,7 @@ const mapStateToProps = state => {
 Counter.propTypes = {
   totalCount: PropTypes.number,
   doneCount: PropTypes.number,
-  notDoneCount: PropTypes.numbers
+  notDoneCount: PropTypes.number
 }
 
 export default connect(mapStateToProps, null)(Counter);
