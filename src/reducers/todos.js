@@ -2,7 +2,6 @@ const todos = (
   state = {
     items: [],
     filtered_items: [],
-    value: ""
   },
   action
 ) => {
@@ -17,8 +16,7 @@ const todos = (
             content: action.content,
             checked: false
           }
-        ],
-        value: ""
+        ]
       };
 
     case "REMOVE_TODO":
