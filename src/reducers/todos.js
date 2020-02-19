@@ -1,16 +1,11 @@
-const todos = (
-  state = {
-    items: [],
-    filtered_items: [],
-  },
-  action
-) => {
+const todos = (state = {}, action) => {
   switch (action.type) {
-    case "ADD_TODO":
+    case "ADD_TODO": {
+      const { items = [] } = state;
       return {
         ...state,
         items: [
-          ...state.items,
+          ...items,
           {
             id: Date.now(),
             content: action.content,
@@ -18,6 +13,7 @@ const todos = (
           }
         ]
       };
+    }
 
     case "REMOVE_TODO":
       return {
@@ -31,23 +27,25 @@ const todos = (
       return {
         ...state,
         items: state.items.map(item => {
-            if(item.id === action.id) item.checked = !item.checked;
-            return item;
+          if (item.id === action.id) item.checked = !item.checked;
+          return item;
         })
       };
 
-    case "SEARCH":
+    case "SEARCH": {
+      // const {filtered_items = []} = state;
+      const { items = [] } = state;
+
       if (!(action.keyword === "")) {
         return {
           ...state,
-          filtered_items: state.items.filter(item => {
+          filtered_items: items.filter(item => {
             const keyword = new RegExp(`${action.keyword}`, "i");
             return keyword.test(item.content);
           })
         };
-      } 
-      else 
-        return { ...state, filtered_items: [] };
+      } else return { ...state, filtered_items: [] };
+    }
 
     default:
       return state;
