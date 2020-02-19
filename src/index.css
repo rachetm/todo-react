@@ -2,199 +2,30 @@ body {
   background-color: white;
   font-family: Roboto, -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  margin: 0 !important;
 }
 
-h1 {
+#root {
+  display: flex;
+  height: 100vh;
+}
+
+.title {
   text-shadow: 2px 2px 3px rgba(110, 110, 110, 0.637);
   text-align: center;
   text-transform: uppercase;
-  font-size: 80px;
-  font-weight: bold;
-  color: rgb(224, 59, 59);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin-top: 30px;
-}
-
-#add-list {
-  display: flex;
-  margin: 0% 25%;
-}
-
-#searchField {
-  display: flex;
-  /* margin: auto auto; */
-}
-
-.fa-search{
-  font-size: 21px;
-  color: rgba(0, 0, 0, 0.555);
-  margin-top: auto;
-  text-align: center;
-  margin-right: 2%;
-}
-
-.fa-plus {
-  margin-right: 15%;
+  color: rgb(116, 116, 116);
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Oxygen, Ubuntu,
+    Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 #addBtn {
   background-color: rgb(0, 110, 228);
   color: white;
-  margin: auto 0 auto 2%;
-}
-
-.add-todo, .search-todo{
-  flex: auto;
-}
-
-.item-container {
-  display: flex;
-  padding: 3% 1% 3% 3%;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.253);
-  margin: 3% 0% 3% 0%;
-}
-
-.item-container > p {
-  flex: 70%;
-  font-size: 16px;
-  margin: auto 0 auto 5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-input[type="checkbox"] {
-  width: 45px;
-}
-
-#btn-danger {
-  margin: auto 4% auto 2%;
-  background-color: white !important;
-  min-height: 45px;
-  box-shadow: none;
-  border: none;
-  border-radius: 50%;
-  min-width: 45px;
-}
-
-#btn-danger i {
-  color: rgba(220, 20, 60, 0.363);
-}
-
-#btn-danger:hover i {
-  color: rgb(220, 20, 60);
+  padding: auto 10px;
 }
 
 .checked {
   color: rgb(173, 173, 173);
   text-decoration: line-through;
 }
-
-.counterContainer{
-  margin: 10% 25%;
-}
-
-.counterContainer p{
-  font-size: 20px;
-  color: rgb(119, 119, 119);
-}
-
-.countNumber{
-  font-size: 60px;
-  color: rgb(80, 80, 80);
-}
-
-
-/* body {
-  background-color: white;
-}
-
-h1 {
-  text-shadow: 2px 2px 3px rgba(110, 110, 110, 0.637);
-  text-align: center;
-  text-transform: uppercase;
-  font-size: 80px;
-  font-weight: bold;
-  color: rgb(224, 59, 59);
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  margin-top: 30px;
-}
-
-hr {
-  color: rgba(224, 224, 224, 0.192);
-  margin-bottom: 5%;
-}
-
-#add-list {
-  display: flex;
-}
-
-#searchField {
-  display: flex;
-  margin: 5% 25%;
-}
-
-.fa-search{
-  font-size: 22px;
-  color: rgba(0, 0, 0, 0.555);
-  margin-top: auto;
-  text-align: center;
-}
-
-.fa-plus {
-  margin-right: 15%;
-}
-
-#addBtn {
-  background-color: rgb(0, 110, 228);
-  color: white;
-  margin: auto 0 auto 2%;
-}
-
-.add-todo, .search-todo, .fa-search{
-  flex: auto;
-}
-
-.item-container {
-  display: flex;
-  padding: 3% 1% 3% 3%;
-  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.253);
-  margin: 3% 0% 3% 0%;
-}
-
-.item-container > p {
-  flex: 70%;
-  font-size: 16px;
-  margin: auto 0 auto 5%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-}
-
-input[type="checkbox"] {
-  width: 45px;
-}
-
-#btn-danger {
-  margin: auto 4% auto 2%;
-  background-color: white !important;
-  min-height: 45px;
-  box-shadow: none;
-  border: none;
-  border-radius: 50%;
-  min-width: 45px;
-}
-
-#btn-danger i {
-  color: rgba(220, 20, 60, 0.363);
-}
-
-#btn-danger:hover i {
-  color: rgb(220, 20, 60);
-}
-
-.checked {
-  color: rgb(173, 173, 173);
-  text-decoration: line-through;
-}
- */
